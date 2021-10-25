@@ -14,7 +14,7 @@ ID=$(\
 	awk '{print $1}'\
 )
 
-if [ ${ID} != "" ]; then
+if [ ! -z œ${ID} ]; then
 	echo "Closing container ${ID}"
 	docker container stop ${ID}
 fi
@@ -26,7 +26,7 @@ Repository=$(\
 	awk '{print $1}'\
 )
 
-if [ ${Repository} != "" ]; then
+if [ ! -z ${Repository} ]; then
 	echo "Removing image ${Image}"
 	docker image rm ${Image}
 fi
@@ -34,24 +34,12 @@ fi
 echo "Creating a new image ${Image}"
 docker image build -t ${Image} .
 
-# Creating a new volume
-VolumeName=$(\
-	docker volume ls --format="{{.Name}}" |\
-	grep ${Volume} |\
-	awk '{print $1}'\
-)
-
-if [ ${VolumeName} != "" ]; then
-	echo "Creation a new volume ${Image}"
-	docker volume create ${Volume}
-fi
-
 # Start a new container
 echo "Running new container ${Name}"
 docker container run -d -it \
 	-p ${Port}:80 \
+	-v $(pwd):/var/www/html/ \
 	--name=${Name} \
-	--mount source="$(pwd)",target=/var/www/html/ \
 	${Image}
 
 echo "Container ${Name} is now running on port ${Port}"
