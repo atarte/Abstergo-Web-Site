@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Deleting the last image
-docker image rm Abstergo-ERP
+Image="Abstergo-ERP"
+docker image rm ${Image}
 
 # Creating a new image
-docker image build -t Abstergo-ERP .
+docker image build -t ${Image} .
 
 # Find the ID of the container running on the port 8000
 Port=8000
@@ -24,7 +25,6 @@ docker container stop ${ID}
 # Start a new container
 Time=$(date +%s)
 Name="Abstergo-ERP-${Time}"
-Image="server_web_test"
 
 echo "Running new container"
 docker container run -d -it -p ${Port}:80 --name=${Name} ${Image}
