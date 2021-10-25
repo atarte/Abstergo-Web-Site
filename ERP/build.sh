@@ -1,32 +1,57 @@
 #!/bin/bash
 
-# Deleting the last image
-Image="abstergo-erp"
-docker image rm ${Image}
-
-# Creating a new image
-docker image build -t ${Image} .
-
-# Find the ID of the container running on the port 8000
+# var
 Port=8000
+Time=$(date +%s)
+Image="abstergo-erp"
+Volume="Abstergo-ERP"
+Name="Abstergo-ERP-${Time}"
+
+# Close the current container
 ID=$(\
 	docker container ls --format="{{.ID}}\t{{.Ports}}" |\
 	grep ":${Port}->" |\
 	awk '{print $1}'\
-	)
-#echo "print l'id du container : |${ID}|"
+)
 
-# Stop the container with his ID
-#if [${ID} != ""]; then
-echo "Closing container ${ID}"
-docker container stop ${ID}
-#fi
+if [ ${ID} != "" ]; then
+	echo "Closing container ${ID}"
+	docker container stop ${ID}
+fi
+
+# Deleting the last image / Creating a new image
+Repository=$(\
+	docker image ls --format="{{.Repository}}" |\
+	grep ${Image} |\
+	awk 'print $1'\
+)
+
+if [ ${Repository} != "" ]; then
+	echo "Removing image ${Image}"
+	docker image rm ${Image}
+fi
+
+echo "Creating a new image ${Image}"
+docker image build -t ${Image} .
+
+# Creating a new volume
+VolumeName=$(\
+	docker volume ls --format="{{.Name}}" |\
+	grep ${Volume} |\
+	awk 'print $1'\
+)
+
+if [ ${VolumeName} != "" ]; then
+	echo "Creation a new volume ${Image}"
+	docker volume create ${Volume}
+fi
 
 # Start a new container
-Time=$(date +%s)
-Name="Abstergo-ERP-${Time}"
-
-echo "Running new container"
-docker container run -d -it -p ${Port}:80 --name=${Name} ${Image}
+echo "Running new container ${Name}"
+docker container run -d -it \
+	-p ${Port}:80 \
+	--name=${Name} \
+	--mount source="$(pwd)",target=/var/www/html/ \
+	${Image}
 
 echo "Container ${Name} is now running on port ${Port}"

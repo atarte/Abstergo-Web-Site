@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=nointeractive && apt-get update && apt-get -y -q upgr
 
 CMD rm /var/www/html/index.html
 
-ADD . /var/www/html
+# ADD . /var/www/html
 
 EXPOSE 80 443
 
