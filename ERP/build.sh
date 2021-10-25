@@ -23,7 +23,7 @@ fi
 Repository=$(\
 	docker image ls --format="{{.Repository}}" |\
 	grep ${Image} |\
-	awk 'print $1'\
+	awk '{print $1}'\
 )
 
 if [ ${Repository} != "" ]; then
@@ -38,7 +38,7 @@ docker image build -t ${Image} .
 VolumeName=$(\
 	docker volume ls --format="{{.Name}}" |\
 	grep ${Volume} |\
-	awk 'print $1'\
+	awk '{print $1}'\
 )
 
 if [ ${VolumeName} != "" ]; then
