@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Deleting the last image
-Image="Abstergo-ERP"
+Image="abstergo-erp"
 docker image rm ${Image}
 
 # Creating a new image
