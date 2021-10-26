@@ -14,7 +14,7 @@ ID=$(\
 )
 
 if [ ! -z ${ID} ]; then
-	echo "Closing container ${ID}"
+	echo "Closing DataBase container ${ID}"
 	docker container stop ${ID}
 fi
 
@@ -25,13 +25,13 @@ VolumeName=$(\
 	awk '{print $1}'\
 )
 
-if [ ${VolumeName} != "" ]; then
+if [ -z ${VolumeName} ]; then
 	echo "Creation a new volume ${Image}"
 	docker volume create ${Volume}
 fi
 
 # Start a new container
-echo "Running new container ${Name}"
+echo "Running new DataBase container ${Name}"
 docker container run -d -it \
     --mount source=${Volume},target=/app \
 	--name=${Name} \
