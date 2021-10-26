@@ -33,6 +33,7 @@ fi
 # Start a new container
 echo "Running new DataBase container ${Name}"
 docker container run -d -it \
+	-p 1531:1531 \
     --mount source=${Volume},target=/app \
 	--name=${Name} \
 	${Image}
