@@ -2,7 +2,8 @@
 
 # Starting ERP
 echo "lancement de l'ERP"
-bash ./ERP/build.sh
+bash ./ERP/buildWebPage.sh
+bash ./ERP/buildDataBase.sh
 
 # Starting Showcase Website
 echo "lancement du Site Vitrine"
