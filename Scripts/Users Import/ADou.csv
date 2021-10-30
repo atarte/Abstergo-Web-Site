@@ -1,0 +1,5 @@
+OU;Path
+AutresEmployes;DC=exia, DC=local
+MigrationAD;DC=exia, DC=local
+ServiceComptabilite;DC=exia, DC=local
+ServiceDirectionnel;DC=exia, DC=local
