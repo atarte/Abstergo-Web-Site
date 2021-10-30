@@ -1,0 +1,12 @@
+Group;OU
+GRP_invite;OU=AutresEmployes, DC=exia, DC=local
+GRP_migrationADemployes;OU=MigrationAD, DC=exia, DC=local
+GRP_MigrationADresponsable;OU=MigrationAD, DC=exia, DC=local
+GRP_comptaResponsable;OU=ServiceComptabilite, DC=exia, DC=local
+GRP_comptaEmployes;OU=ServiceComptabilite, DC=exia, DC=local
+GRP_admin;OU=ServiceDirectionnel, DC=exia, DC=local
+GRP_codg;OU=ServiceDirectionnel, DC=exia, DC=local
+GRP_dg;OU=ServiceDirectionnel, DC=exia, DC=local
+GRP_dsi;OU=ServiceDirectionnel, DC=exia, DC=local
+GRP_rsii;OU=ServiceDirectionnel, DC=exia, DC=local
+GRP_personnelSecurite;OU=AutresEmployes, DC=exia, DC=local
