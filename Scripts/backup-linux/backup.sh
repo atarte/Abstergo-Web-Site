@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path
-backup_files="/home /var/spool/mail /etc /root /boot /opt"
+backup_files="/home /var /etc /root /boot /opt"
 dest="/backup"
 
 # Name
