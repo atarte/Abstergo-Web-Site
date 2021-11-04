@@ -1,12 +1,15 @@
 Group;OU
-GRP_invite;OU=AutresEmployes, DC=exia, DC=local
-GRP_migrationADemployes;OU=MigrationAD, DC=exia, DC=local
-GRP_MigrationADresponsable;OU=MigrationAD, DC=exia, DC=local
-GRP_comptaResponsable;OU=ServiceComptabilite, DC=exia, DC=local
-GRP_comptaEmployes;OU=ServiceComptabilite, DC=exia, DC=local
-GRP_admin;OU=ServiceDirectionnel, DC=exia, DC=local
-GRP_codg;OU=ServiceDirectionnel, DC=exia, DC=local
-GRP_dg;OU=ServiceDirectionnel, DC=exia, DC=local
-GRP_dsi;OU=ServiceDirectionnel, DC=exia, DC=local
-GRP_rsii;OU=ServiceDirectionnel, DC=exia, DC=local
-GRP_personnelSecurite;OU=AutresEmployes, DC=exia, DC=local
+GRP_employes;DC=exia, DC=local
+GRP_admin;DC=exia, DC=local
+GRP_intervenants;OU=Intervenant, DC=exia, DC=local
+GRP_gestionAD;OU=GestionAD, DC=exia, DC=local
+GRP_gestionADResponsable;OU=GestionAD, DC=exia, DC=local
+GRP_stageResponsables;OU=Stagiaire, DC=exia, DC=local
+GRP_stagiaire;OU=Stagiaire, DC=exia, DC=local
+GRP_comptaResponsables;OU=Comptabilite, DC=exia, DC=local
+GRP_compta;OU=Comptabilite, DC=exia, DC=local
+GRP_direction;OU=Direction, DC=exia, DC=local
+GRP_devResponsables;OU=AutresEmployes, DC=exia, DC=local
+GRP_dev;OU=AutresEmployes, DC=exia, DC=local
+GRP_RHResponsables;OU=RessourcesHumaines, DC=exia, DC=local
+GRP_RH;OU=RessourcesHumaines, DC=exia, DC=local
