@@ -3,7 +3,7 @@
 #
 
 # Obtention de l'adapateur réseau
-$adp = (Get-NetAdapter -Name "Ethernet0").ifIndex
+$adp=(Get-NetAdapter -Name "Ethernet0").ifIndex
 
 # Modification de l'adresse ip de l'adapateur réseau
 New-NetIPAddress –InterfaceIndex $adp –IPAddress 10.0.1.12 –PrefixLength 24 –DefaultGateway 10.0.1.1
@@ -25,4 +25,4 @@ New-SmbShare -Name Backup-DC0 -Path "C:\Backup-DC0" -FullAccess "Administrateur"
 Rename-Computer -NewName DC1 -DomainCredential EXIA\Administrator -PassThru
 
 # Redemarrage du serveur
-Shutdown-r-t 0
+Restart-Computer
