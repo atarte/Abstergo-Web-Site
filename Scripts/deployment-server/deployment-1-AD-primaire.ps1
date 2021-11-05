@@ -1,6 +1,7 @@
 #
 # Script Windows PowerShell pour le déploiement d’AD DS
 # Installation/Configutation des toutes les fonctionnalité et services de base
+# du controleur de domaine principal
 #
 
 # Configutation des interface réseau -------------------------------------------
@@ -14,7 +15,7 @@ New-NetIPAddress –InterfaceIndex $adp –IPAddress 10.0.1.11 –PrefixLength 2
 Set-DnsClientServerAddress -InterfaceIndex $adp -ServerAddresses "10.0.1.11"
 
 # Configutation de L'AD DS -----------------------------------------------------
-# Deploiement de l'AD principal
+# Installation de l'AD principal
 Import-Module ADDSDeployment
 Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\Windows\NTDS" -DomainMode "WinThreshold" -DomainName "exia.local" -DomainNetbiosName "EXIA" -ForestMode "WinThreshold" -InstallDns:$true -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\Windows\SYSVOL" -Force:$true
 
@@ -33,7 +34,7 @@ Add-DnsServerPrimaryZone -NetworkId "10.0.1.0/24" -ReplicationZone "Domain"
 ipconfig /registerdns
 
 # Configutation du DHCP --------------------------------------------------------
-# déploiement du service de DHCP
+# Installation du service de DHCP
 Install-WindowsFeature -Name 'DHCP' -IncludeManagementTools
 
 # Ajout d'un scope de DHCP
@@ -48,17 +49,28 @@ Set-DhcpServerv4Scope -ScopeId 10.0.1.0 -LeaseDuration 1.00:00:00
 # Relancement du service DHCP
 Restart-Service dhcpserver
 
-# Installation de SNMP ---------------------------------------------------------
+# Configutation de SNMP ---------------------------------------------------------
+# Installation du service SNMP
 Install-WindowsFeature SNMP-Service -IncludeAllSubFeature -IncludeManagementTools
 
+# Configutation du service SNMP
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities" -Name "public" -Value 4 -type DWord
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "2" -Value "10.0.1.11" -type String
+
+# Restart du service SNMP
+Restart-Service -Name SNMP
+
 # Configutation de la sauvegarde des données -----------------------------------
+# Installation de Windows server backup
 Install-WindowsFeature Windows-Server-Backup
+
+# Configutation d'un backup compléte régulaire
 Add-WBBackupTarget -Policy New-Policy | Add-WBSystemState -Target New-WBBackupTarget -NetworkPath "//DC1/Backup-DC0" - Credential (Get-Credential)
 Set-WBbackupTarget -Policy New-Policy | Add-WBSystemState -VssFullbackup
 Set-WBSchedule -Policy New-Policy | Add-WBSystemState -Schedule 23:00
 Set-WBPolicy -Policy New-Policy | Add-WBSystemState
 
-# Changement de nom de l'ad primaire -------------------------------------------
+# Changement de nom de l'AD primaire -------------------------------------------
 Rename-Computer -NewName DC0 -DomainCredential EXIA\Administrator -PassThru
 
 # Redemarrage du serveur
