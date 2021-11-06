@@ -55,7 +55,7 @@ Install-WindowsFeature SNMP-Service -IncludeAllSubFeature -IncludeManagementTool
 
 # Configutation du service SNMP
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities" -Name "public" -Value 4 -type DWord
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "2" -Value "10.0.1.11" -type String
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "2" -Value "10.0.1.2" -type String
 
 # Restart du service SNMP
 Restart-Service -Name SNMP
