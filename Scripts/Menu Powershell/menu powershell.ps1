@@ -35,7 +35,7 @@ If ($Serveur -eq "Get-ADUser")
             }
             If ($User -eq "Pseudo")
                 {
-                    $User = Read-host "Veuillez renseigner le pseudo de l'utilisateur" -confirm
+                    $User = Read-host "Veuillez renseigner le pseudo de l'utilisateur" 
                     #Get-ADUser -Identity $User |out-file -FilePath "c:\User.txt"
                     get-aduser  -Identity $User | Export-Csv c:\user.csv
             }
@@ -52,7 +52,7 @@ elseif ($Serveur -eq "Get-ADGroup")
 
     Write-host "Taper [1]- Recherche par Nom"
     Write-host "Taper [2]- Obtenir le SID"
-    Write-host "Taper [3]- Obtenir lea liste de tous les groupes"
+    Write-host "Taper [3]- Obtenir la liste de tous les groupes"
     $Group = Read-Host "Choisissez un numero parmi les 3 propositions"
 
         Switch ($Group)
