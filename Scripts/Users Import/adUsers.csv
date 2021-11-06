@@ -19,10 +19,10 @@ A;dministrateurRH;absterg0GRP4!;OU=RessourcesHumaines, DC=exia, DC=local
 Laurent;Donadet;absterg0GRP4!;CN=GRP_RHResponsables,OU=RessourcesHumaines, DC=exia, DC=local
 Mia;Doe;absterg0GRP4!;CN=GRP_RH,OU=RessourcesHumaines, DC=exia, DC=local
 Corentin;Jean;absterg0GRP4!;CN=GRP_RH,OU=RessourcesHumaines, DC=exia, DC=local
-A;dministrateurE;absterg0GRP4!;OU=AutresEmployes, DC=exia, DC=local
-Isabelle;Sabatier;absterg0GRP4!;CN=GRP_devResponsables, OU=AutresEmployes, DC=exia, DC=local
-Roger;Gomez;absterg0GRP4!;CN=GRP_dev, OU=AutresEmployes, DC=exia, DC=local
-Theo;Chalamet;absterg0GRP4!;CN=GRP_dev, OU=AutresEmployes, DC=exia, DC=local
+A;dministrateurE;absterg0GRP4!;OU=Developpeur, DC=exia, DC=local
+Isabelle;Sabatier;absterg0GRP4!;CN=GRP_devResponsables, OU=Developpeur, DC=exia, DC=local
+Roger;Gomez;absterg0GRP4!;CN=GRP_dev, OU=Developpeur, DC=exia, DC=local
+Theo;Chalamet;absterg0GRP4!;CN=GRP_dev, OU=Developpeur, DC=exia, DC=local
 A;dministrateurS;absterg0GRP4!;OU=Stagiaire, DC=exia, DC=local
 Gerard;Pagano;absterg0GRP4!;CN=GRP_stageResponsables, OU=Stagiaire, DC=exia, DC=local
 John;Doe;absterg0GRP4!;CN=GRP_stageResponsables, OU=Stagiaire, DC=exia, DC=local
