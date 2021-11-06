@@ -1,6 +1,7 @@
 #
 # Script Windows PowerShell pour le déploiement d’AD DS
-# Configutation des fichiers et policy interne du controleur de domaine principal
+# Configutation des fichiers du controleur de domaine principal, en fonction de
+# l'achitecture de l'AD défini
 #
 
 # Creation des fichiers partager -----------------------------------------------
