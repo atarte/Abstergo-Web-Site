@@ -9,7 +9,7 @@ GRP_stagiaire;OU=Stagiaire, DC=exia, DC=local
 GRP_comptaResponsables;OU=Comptabilite, DC=exia, DC=local
 GRP_compta;OU=Comptabilite, DC=exia, DC=local
 GRP_direction;OU=Direction, DC=exia, DC=local
-GRP_devResponsables;OU=AutresEmployes, DC=exia, DC=local
-GRP_dev;OU=AutresEmployes, DC=exia, DC=local
+GRP_devResponsables;OU=Developpeur, DC=exia, DC=local
+GRP_dev;OU=Developpeur, DC=exia, DC=local
 GRP_RHResponsables;OU=RessourcesHumaines, DC=exia, DC=local
 GRP_RH;OU=RessourcesHumaines, DC=exia, DC=local
