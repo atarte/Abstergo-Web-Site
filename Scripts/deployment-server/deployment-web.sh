@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script de déployement du serveur web
+# Script de déploiement du serveur web
 
 # Mise a jour de l'outil apt-get -----------------------------------------------
 apt-get update

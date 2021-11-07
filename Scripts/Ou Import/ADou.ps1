@@ -4,15 +4,11 @@ $CSVData = Import-CSV -Path $ADou -Delimiter ";" -Encoding Default
 
 foreach ($Ou in $CSVData)
 {
+    $addOU = $Ou.OU
+    $Path = $Ou.Path
 
-       $addOU = $Ou.OU
-       $Path = $Ou.Path
-
-       #créez une nouvelle OU
-          
-       New-ADOrganizationalUnit 
-		-Name $addOU 
-		-Path $Path
-
-       
+    #créez une nouvelle OU
+    New-ADOrganizationalUnit
+    -Name $addOU
+    -Path $Path
 }

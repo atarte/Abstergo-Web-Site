@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script de déployement de l'outil de monitoring Centreon
+# Script de déploiement de l'outil de monitoring Centreon
 
 # Mise a jour de l'outil apt-get -----------------------------------------------
 yum update

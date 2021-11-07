@@ -5,6 +5,9 @@
 #
 
 # Creation des fichiers partager -----------------------------------------------
+# Insallation du module de gestion des droit NTFS
+Install-Module NTFSSecurity
+
 # Creation des fichiers
 New-Item "C:\Direction" -itemType Directory
 New-Item "C:\GestionAD" -itemType Directory

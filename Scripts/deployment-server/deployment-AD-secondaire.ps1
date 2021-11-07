@@ -17,7 +17,7 @@ Set-DnsClientServerAddress -InterfaceIndex $adp -ServerAddresses "10.0.1.11"
 # Configutation de l'AD DS -----------------------------------------------------
 # Installation de l'AD secondaire
 Import-Module ADDSDeployment
-Install-ADDSDomainController -NoGlobalCatalog:$false -CreateDnsDelegation:$false -Credential (Get-Credential) -CriticalReplicationOnly:$false -DatabasePath "C:\Windows\NTDS" -DomainName "exia.local" -InstallDns:$true -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -ReplicationSourceDC "DC0.exia.local" -SiteName "Default-First-Site-Name" -SysvolPath "C:\Windows\SYSVOL" ` -Force:$true
+Install-ADDSDomainController -NoGlobalCatalog:$false -CreateDnsDelegation:$false -Credential (Get-Credential) -CriticalReplicationOnly:$false -DatabasePath "C:\Windows\NTDS" -DomainName "exia.local" -InstallDns:$true -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion:$false -ReplicationSourceDC "DC0.exia.local" -SiteName "Default-First-Site-Name" -SysvolPath "C:\Windows\SYSVOL" -Force:$true
 
 # Configutation de SNMP ---------------------------------------------------------
 # Installation du service SNMP
@@ -31,6 +31,9 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\
 Restart-Service -Name SNMP
 
 # Configutation des fichers pour les backups de DC0 ----------------------------
+# Insallation du module de gestion des droit NTFS
+Install-Module NTFSSecurity
+
 # Création d'un ficher pour les backup de DC0
 New-Item "C:\Backup-DC0" -itemType Directory
 
