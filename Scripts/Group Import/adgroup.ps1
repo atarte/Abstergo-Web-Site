@@ -6,15 +6,12 @@ foreach ($Group in $CSVData)
 {
 
        
-       $Group = $Group.name
-       $OU = $Group.ou
+       $addGroup = $Group.Group
+       $OU = $Group.Ou
 
        #créez un nouveau groupe
           
-       New-ADGroup 
-		-Name $Group 
-		-GroupScope Global 
-		-Path $OU
+       New-ADGroup -Name $addGroup -GroupScope Global -Path $OU
 
        
 }
