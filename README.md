@@ -6,29 +6,43 @@ Ce git contient l'ensemble des scripts réalisés pour la mise en place du S.I d
 
 Tout d'abord vous trouverez le dossier ERP. Ce dernier contient toutes les procédures et ressources nécessaires à conception du site.
 C'est-à-dire : 
+
 -un fichier index.html qui contient le code de la page du site ERP
+
 -un fichier buildDataBase.sh qui permet d'arrêter le conteneur en cours et de lancer le conteneur de l'image utilisée pour la base de donnée.
+
 -un fichier buildWebPage.sh qui permet d'arrêter le conteneur en cours et de lancer le conteneur de l'image utilisée pour le site ERP.
+
 -un dossier ressource contenant 3 sous-dossiers respectivement css, img, js. 
+
 Au sein du dossier css nous avons déposé un fichier master.css qui contient le code permettant de styliser notre page index.html
 Le dossier img quant à lui regroupe les images utilisées dans notre page index.html
 Enfin le dossier js qui contient le fichier script.js permettant de tester notre configuration.
 
 Ensuite vous trouverez le dossier Showcase-Website. Ce dernier contient toutes les procédures et ressources nécessaires à conception du site Web.
 C'est-à-dire : 
+
 -un fichier index.html qui contient le code de la page du du site Web
+
 -un fichier build.sh qui permet d'arrêter le conteneur en cours et de lancer le conteneur de l'image utilisée pour le site Web.
+
 -un dossier ressource contenant 3 sous-dossiers respectivement css, img, js. 
+
 Au sein du dossier css nous avons déposé un fichier master.css qui contient le code permettant de styliser notre page index.html
 Le dossier img quant à lui regroupe les images utilisées dans notre page index.html
 Enfin le dossier js qui contient le fichier script.js permettant de tester notre configuration.
 
 Puis vous trouverez le dossier Wiki. Ce dernier contient toutes les procédures et ressources nécessaires à conception du site Wiki.
 C'est-à-dire : 
+
 -un fichier README.md contenant les informations sur le dossier Wiki
+
 -un fichier index.html qui contient le code de la page du du site Wiki
+
 -un fichier build.sh qui permet d'arrêter le conteneur en cours et de lancer le conteneur de l'image utilisée pour le site Wiki.
+
 -un dossier ressource contenant 3 sous-dossiers respectivement css, img, js. 
+
 Au sein du dossier css nous avons déposé un fichier master.css qui contient le code permettant de styliser notre page index.html
 Le dossier img quant à lui regroupe les images utilisées dans notre page index.html
 Enfin le dossier js qui contient le fichier script.js permettant de tester notre configuration.
