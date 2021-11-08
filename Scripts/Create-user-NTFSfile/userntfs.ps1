@@ -1,4 +1,5 @@
 ﻿#importer les données
+Install-Module NTFSSecurity
 $ADUsers = "C:\employes\user.csv"
 $CSVData = Import-CSV -Path $ADUsers -Delimiter ";" -Encoding Default
 
