@@ -32,7 +32,7 @@ C'est-à-dire :
 
 * un fichier _index.html_ qui contient le code de la page du du site Web
 
-* un fichier _build.sh_ qui permet d'arrêter le conteneur en cours et de lancer le conteneur de l'image utilisée pour le site Web. Pour l'excuté utilisé la commande `bash build.sh` dans votre terminal
+* un fichier _build.sh_ qui permet d'arrêter le conteneur en cours et de lancer le conteneur de l'image utilisée pour le site Web. Pour l'excuter utilisez la commande `bash build.sh` dans votre terminal
 
 * un dossier [`ressource`](https://github.com/atarte/Abstergo-Web-Site/tree/main/Showcase-Website/ressource) contenant 3 sous-dossiers respectivement css, img, js :
 
@@ -102,4 +102,4 @@ Le dossier [Script](https://github.com/atarte/Abstergo-Web-Site/tree/main/Script
 
 * [`folder-creation`](https://github.com/atarte/Abstergo-Web-Site/tree/main/Scripts/folder-creation) :
 
-    * _folder-creation.ps1_ : un script powershell permettant de crée les fichiers partagés de l'AD
+    * _folder-creation.ps1_ : un script powershell permettant de créer les fichiers partagés de l'AD
